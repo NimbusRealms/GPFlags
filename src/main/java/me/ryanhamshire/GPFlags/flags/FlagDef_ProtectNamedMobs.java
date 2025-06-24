@@ -2,11 +2,13 @@ package me.ryanhamshire.GPFlags.flags;
 
 import me.ryanhamshire.GPFlags.*;
 import me.ryanhamshire.GPFlags.hooks.MythicMobsHook;
+import me.ryanhamshire.GPFlags.hooks.RoseStackerHook;
 import me.ryanhamshire.GriefPrevention.Claim;
 import me.ryanhamshire.GriefPrevention.ClaimPermission;
 import me.ryanhamshire.GriefPrevention.GriefPrevention;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -35,6 +37,7 @@ public class FlagDef_ProtectNamedMobs extends FlagDefinition {
         if (eType == EntityType.ITEM_FRAME) return;
         if (eType == EntityType.GLOW_ITEM_FRAME) return;
         if (MythicMobsHook.isMythicMob(entity)) return;
+        if (RoseStackerHook.isStackedMob((LivingEntity) entity)) return;
 
         Entity damager = event.getDamager();
         if (damager.getType() != EntityType.PLAYER) {

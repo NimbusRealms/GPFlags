@@ -6,7 +6,7 @@
 
     <groupId>me.ryanhamshire</groupId>
     <artifactId>GPFlags</artifactId>
-    <version>5.13.8.${build.number}</version>
+    <version>5.13.8.${build.number}+NR</version>
 
     <properties>
 <!--        this is the real java version used for compilation-->
@@ -47,6 +47,10 @@
         <repository>
             <id>elitemobs-repo</id>
             <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </repository>
+        <repository>
+            <id>rosewood-repo</id>
+            <url>https://repo.rosewooddev.io/repository/public/</url>
         </repository>
     </repositories>
     <dependencies>
@@ -133,6 +137,12 @@
             <artifactId>bstats-bukkit</artifactId>
             <version>3.0.2</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>dev.rosewood</groupId>
+            <artifactId>rosestacker</artifactId>
+            <version>1.5.33</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
